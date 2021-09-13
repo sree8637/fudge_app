@@ -53,33 +53,83 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
-  // background-image: url('/images/home/home-bg.png');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-}
-.bgimg {
-  width:100%;
-}
-.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 115vh;
-  overflow: hidden;
-}
-.overlay {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.fudge-logo {
-  position: absolute;
-  z-index: 99;
-  top:45%;
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+
+    .bgimg {
+      width:100%;
+    }
+    .overlay {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fudge-logo {
+      position: absolute;
+      z-index: 99;
+      top:45%;
+    }
+    .down-arrow {
+      position: absolute;
+      bottom: 30px;
+    }
+    .title {
+      position: absolute;
+      bottom: 20%;
+      color:#fff;
+      h1 {
+        font-size: 50px;
+        font-weight: 900;
+      }
+      p {
+        color: #cfcfcf;
+        width: 70%;
+        margin: auto;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+    }
+    .view-dash-btn {
+      padding: 10px 15px;
+      background-color: transparent;
+      font-size: 18px;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 5px;
+    }
+    .transitionLine {
+      height:0px;
+      width:1px;
+      border:5px solid #fff;
+      position: absolute;
+      bottom: 45%;
+      padding-left: 10%;
+
+      
+      -webkit-animation: increase 2s;
+      -moz-animation:    increase 2s; 
+      -o-animation:      increase 2s; 
+      animation:         increase 2s; 
+      animation-fill-mode: forwards;
+    }
+
+		@keyframes increase {
+      10% {
+        width: 100px;
+      }
+			100% {
+				border-radius: 3px;
+				width: 1500px;
+			}
+		}
+  }
 }
 .slide-fade-enter-active {
   transition: all .9s ease;
@@ -94,70 +144,7 @@ export default {
   transition: 0.2s;
   opacity: 0;
 }
-.title {
-position: absolute;
-bottom: 20%;
-color:#fff;
-h1 {
-  font-size: 50px;
-  font-weight: 900;
-}
-p {
-  color: #cfcfcf;
-  width: 70%;
-  margin: auto;
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-}
-.down-arrow {
-  position: absolute;
-  bottom: 30px;
-}
-.view-dash-btn {
-  padding: 10px 15px;
-  background-color: transparent;
-  font-size: 18px;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 5px;
-}
 
 
-.transitionLine {
-  height:0px;
-  width:1px;
-  border:5px solid #fff;
-  position: absolute;
-  bottom: 45%;
-  padding-left: 10%;
-
-  
-  -webkit-animation: increase 2s;
-  -moz-animation:    increase 2s; 
-  -o-animation:      increase 2s; 
-  animation:         increase 2s; 
-  animation-fill-mode: forwards;
-}
-
-		@keyframes increase {
-			/*load to left*/
-      10% {
-        width: 100px;
-      }
-			// 30% {				
-			// 	width: 500px;
-			// }
-			// /*load down*/
-			// 60% {
-			// 	border-radius: 3px;				
-			// 	width: 1000px;
-			// }
-			/*load to left*/
-			100% {
-				border-radius: 3px;
-				width: 1500px;
-			}
-		}
 
 </style>
